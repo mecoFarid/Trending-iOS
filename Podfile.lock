@@ -1,0 +1,22 @@
+PODS:
+  - Cuckoo (1.9.1):
+    - Cuckoo/Swift (= 1.9.1)
+  - Cuckoo/Swift (1.9.1)
+  - Nimble (11.2.1)
+
+DEPENDENCIES:
+  - Cuckoo
+  - Nimble
+
+SPEC REPOS:
+  trunk:
+    - Cuckoo
+    - Nimble
+
+SPEC CHECKSUMS:
+  Cuckoo: 1b6793fe60fac29af50b0a5915bc309a4a1ac673
+  Nimble: 516ac503a0fafaa8e41dbb4a70a61be421fa893a
+
+PODFILE CHECKSUM: b986a6590f7dd1c8905585eb7d16a68589970ffb
+
+COCOAPODS: 1.11.3
