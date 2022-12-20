@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		097A48F6A9A1CF46A9B39DF9 /* Pods_TrendingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7D9C0B646BA9F44298695C5 /* Pods_TrendingTests.framework */; };
 		3BE0660CF4C8C81EFF118085 /* Pods_Trending.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9623816198F8FB5BCB98602B /* Pods_Trending.framework */; };
+		750BD2F92951A43000FB13B3 /* Trending+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750BD2F82951A43000FB13B3 /* Trending+Extensions.swift */; };
+		750BD2FB2951A54500FB13B3 /* Range+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750BD2FA2951A54500FB13B3 /* Range+Extensions.swift */; };
+		750BD2FF2951AB4200FB13B3 /* Query+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750BD2FE2951AB4200FB13B3 /* Query+Extensions.swift */; };
 		755D1B972939EC350051E205 /* GetTrendingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755D1B962939EC350051E205 /* GetTrendingInteractor.swift */; };
 		755D1B9B2939EED60051E205 /* Trending.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755D1B9A2939EED60051E205 /* Trending.swift */; };
 		755D1B9D2939F0100051E205 /* GetTrendingQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755D1B9C2939F0100051E205 /* GetTrendingQuery.swift */; };
@@ -64,6 +67,9 @@
 		0BC6D31D768A2597992AB8AA /* Pods-Trending-TrendingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trending-TrendingUITests.release.xcconfig"; path = "Target Support Files/Pods-Trending-TrendingUITests/Pods-Trending-TrendingUITests.release.xcconfig"; sourceTree = "<group>"; };
 		15DB52D325889CC365433A59 /* Pods-TrendingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrendingTests.debug.xcconfig"; path = "Target Support Files/Pods-TrendingTests/Pods-TrendingTests.debug.xcconfig"; sourceTree = "<group>"; };
 		72A569392A4CF1EC735EC83A /* Pods_Trending_TrendingUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Trending_TrendingUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		750BD2F82951A43000FB13B3 /* Trending+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Trending+Extensions.swift"; sourceTree = "<group>"; };
+		750BD2FA2951A54500FB13B3 /* Range+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Range+Extensions.swift"; sourceTree = "<group>"; };
+		750BD2FE2951AB4200FB13B3 /* Query+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Query+Extensions.swift"; sourceTree = "<group>"; };
 		755D1B962939EC350051E205 /* GetTrendingInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTrendingInteractor.swift; sourceTree = "<group>"; };
 		755D1B9A2939EED60051E205 /* Trending.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trending.swift; sourceTree = "<group>"; };
 		755D1B9C2939F0100051E205 /* GetTrendingQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTrendingQuery.swift; sourceTree = "<group>"; };
@@ -134,6 +140,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		750BD2FC2951A5C800FB13B3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				750BD2F82951A43000FB13B3 /* Trending+Extensions.swift */,
+				750BD2FA2951A54500FB13B3 /* Range+Extensions.swift */,
+				750BD2FE2951AB4200FB13B3 /* Query+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		750BD2FD2951A63900FB13B3 /* ObjectMother */ = {
+			isa = PBXGroup;
+			children = (
+				757FC8EA2950C7A800D62C54 /* TrendingObjectMother.swift */,
+			);
+			path = ObjectMother;
+			sourceTree = "<group>";
+		};
 		755D1B982939EEC00051E205 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
@@ -217,9 +241,11 @@
 		756966502917FC0A00906FAD /* TrendingTests */ = {
 			isa = PBXGroup;
 			children = (
-				75745E472949D41300624AD1 /* GeneratedMocks.swift */,
+				750BD2FD2951A63900FB13B3 /* ObjectMother */,
+				750BD2FC2951A5C800FB13B3 /* Extensions */,
 				75F18025293D128E0038F64C /* Feature */,
 				757FC8E62950A76400D62C54 /* TestUtils.swift */,
+				75745E472949D41300624AD1 /* GeneratedMocks.swift */,
 			);
 			path = TrendingTests;
 			sourceTree = "<group>";
@@ -245,7 +271,6 @@
 			isa = PBXGroup;
 			children = (
 				75745E4B2949D44700624AD1 /* TrendingRepositoryTests.swift */,
-				757FC8EA2950C7A800D62C54 /* TrendingObjectMother.swift */,
 			);
 			path = Repo;
 			sourceTree = "<group>";
@@ -681,8 +706,11 @@
 			files = (
 				75745E482949D41300624AD1 /* GeneratedMocks.swift in Sources */,
 				757FC8E72950A76400D62C54 /* TestUtils.swift in Sources */,
+				750BD2FF2951AB4200FB13B3 /* Query+Extensions.swift in Sources */,
 				757FC8EB2950C7A800D62C54 /* TrendingObjectMother.swift in Sources */,
+				750BD2F92951A43000FB13B3 /* Trending+Extensions.swift in Sources */,
 				75745E4C2949D44700624AD1 /* TrendingRepositoryTests.swift in Sources */,
+				750BD2FB2951A54500FB13B3 /* Range+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
