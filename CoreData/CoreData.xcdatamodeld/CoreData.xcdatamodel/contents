@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21279" systemVersion="21G83" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="OwnerLocalEntity" representedClassName="OwnerLocalEntity" syncable="YES" codeGenerationType="category">
+        <attribute name="avatar_url" optional="YES" attributeType="String"/>
+        <attribute name="login" attributeType="String"/>
+        <relationship name="trending" maxCount="1" deletionRule="Cascade" destinationEntity="TrendingLocalEntity" inverseName="owner" inverseEntity="TrendingLocalEntity"/>
+    </entity>
+    <entity name="TrendingLocalEntity" representedClassName="TrendingLocalEntity" syncable="YES" codeGenerationType="category">
+        <attribute name="description_text" optional="YES" attributeType="String"/>
+        <attribute name="language" optional="YES" attributeType="String"/>
+        <attribute name="name" attributeType="String"/>
+        <attribute name="stargazers_count" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="owner" maxCount="1" deletionRule="Cascade" destinationEntity="OwnerLocalEntity" inverseName="trending" inverseEntity="OwnerLocalEntity"/>
+    </entity>
+</model>

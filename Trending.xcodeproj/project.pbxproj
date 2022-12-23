@@ -12,6 +12,8 @@
 		750BD2F92951A43000FB13B3 /* Trending+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750BD2F82951A43000FB13B3 /* Trending+Extensions.swift */; };
 		750BD2FB2951A54500FB13B3 /* Range+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750BD2FA2951A54500FB13B3 /* Range+Extensions.swift */; };
 		750BD2FF2951AB4200FB13B3 /* Query+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750BD2FE2951AB4200FB13B3 /* Query+Extensions.swift */; };
+		750BD30229536A2B00FB13B3 /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 750BD30029536A2B00FB13B3 /* CoreData.xcdatamodeld */; };
+		751F2CCB29559961002080DF /* TrendingLocalEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751F2CCA29559961002080DF /* TrendingLocalEntity.swift */; };
 		755D1B972939EC350051E205 /* GetTrendingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755D1B962939EC350051E205 /* GetTrendingInteractor.swift */; };
 		755D1B9B2939EED60051E205 /* Trending.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755D1B9A2939EED60051E205 /* Trending.swift */; };
 		755D1B9D2939F0100051E205 /* GetTrendingQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755D1B9C2939F0100051E205 /* GetTrendingQuery.swift */; };
@@ -38,7 +40,6 @@
 		75A7ABCA2938C90D00EC588C /* TrendingLocalDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A7ABC92938C90D00EC588C /* TrendingLocalDatasource.swift */; };
 		75A7ABCC2938C91B00EC588C /* TrendingRemoteDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A7ABCB2938C91B00EC588C /* TrendingRemoteDatasource.swift */; };
 		75A7ABD02938CC1600EC588C /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A7ABCF2938CC1600EC588C /* Operation.swift */; };
-		75A7ABD5293922F800EC588C /* TrendingLocalEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A7ABD4293922F800EC588C /* TrendingLocalEntity.swift */; };
 		75A7ABD72939230F00EC588C /* TrendingRemoteEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A7ABD62939230F00EC588C /* TrendingRemoteEntity.swift */; };
 		75A7ABDA2939326100EC588C /* DatasourceMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A7ABD92939326100EC588C /* DatasourceMapper.swift */; };
 		75A7ABDC2939328800EC588C /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A7ABDB2939328800EC588C /* Mapper.swift */; };
@@ -70,6 +71,8 @@
 		750BD2F82951A43000FB13B3 /* Trending+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Trending+Extensions.swift"; sourceTree = "<group>"; };
 		750BD2FA2951A54500FB13B3 /* Range+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Range+Extensions.swift"; sourceTree = "<group>"; };
 		750BD2FE2951AB4200FB13B3 /* Query+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Query+Extensions.swift"; sourceTree = "<group>"; };
+		750BD30129536A2B00FB13B3 /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
+		751F2CCA29559961002080DF /* TrendingLocalEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingLocalEntity.swift; sourceTree = "<group>"; };
 		755D1B962939EC350051E205 /* GetTrendingInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTrendingInteractor.swift; sourceTree = "<group>"; };
 		755D1B9A2939EED60051E205 /* Trending.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trending.swift; sourceTree = "<group>"; };
 		755D1B9C2939F0100051E205 /* GetTrendingQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTrendingQuery.swift; sourceTree = "<group>"; };
@@ -99,7 +102,6 @@
 		75A7ABC92938C90D00EC588C /* TrendingLocalDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingLocalDatasource.swift; sourceTree = "<group>"; };
 		75A7ABCB2938C91B00EC588C /* TrendingRemoteDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingRemoteDatasource.swift; sourceTree = "<group>"; };
 		75A7ABCF2938CC1600EC588C /* Operation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
-		75A7ABD4293922F800EC588C /* TrendingLocalEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingLocalEntity.swift; sourceTree = "<group>"; };
 		75A7ABD62939230F00EC588C /* TrendingRemoteEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingRemoteEntity.swift; sourceTree = "<group>"; };
 		75A7ABD92939326100EC588C /* DatasourceMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatasourceMapper.swift; sourceTree = "<group>"; };
 		75A7ABDB2939328800EC588C /* Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mapper.swift; sourceTree = "<group>"; };
@@ -158,6 +160,22 @@
 			path = ObjectMother;
 			sourceTree = "<group>";
 		};
+		750BD30329536A3B00FB13B3 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				750BD30029536A2B00FB13B3 /* CoreData.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		751F2CC9295590B9002080DF /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				751F2CCA29559961002080DF /* TrendingLocalEntity.swift */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
 		755D1B982939EEC00051E205 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,6 +218,7 @@
 		756966342917FC0900906FAD = {
 			isa = PBXGroup;
 			children = (
+				750BD30329536A3B00FB13B3 /* CoreData */,
 				7569663F2917FC0900906FAD /* Trending */,
 				756966502917FC0A00906FAD /* TrendingTests */,
 				7569665A2917FC0A00906FAD /* TrendingUITests */,
@@ -379,18 +398,10 @@
 		75A7ABD1293922C900EC588C /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				751F2CC9295590B9002080DF /* Local */,
 				75A7ABD3293922DC00EC588C /* Remote */,
-				75A7ABD2293922D600EC588C /* Local */,
 			);
 			path = Entity;
-			sourceTree = "<group>";
-		};
-		75A7ABD2293922D600EC588C /* Local */ = {
-			isa = PBXGroup;
-			children = (
-				75A7ABD4293922F800EC588C /* TrendingLocalEntity.swift */,
-			);
-			path = Local;
 			sourceTree = "<group>";
 		};
 		75A7ABD3293922DC00EC588C /* Remote */ = {
@@ -682,13 +693,14 @@
 				755D1B972939EC350051E205 /* GetTrendingInteractor.swift in Sources */,
 				756966432917FC0900906FAD /* ContentView.swift in Sources */,
 				75A7ABCA2938C90D00EC588C /* TrendingLocalDatasource.swift in Sources */,
+				750BD30229536A2B00FB13B3 /* CoreData.xcdatamodeld in Sources */,
 				755D1BA6293A64B60051E205 /* TrendingRemoteService.swift in Sources */,
-				75A7ABD5293922F800EC588C /* TrendingLocalEntity.swift in Sources */,
 				755D1BA1293A40EA0051E205 /* TrendingLocalEntityToTrendingEntityMapper.swift in Sources */,
 				755D1BA3293A4E170051E205 /* DataException.swift in Sources */,
 				75A7ABBE2938C72000EC588C /* TrendingRepository.swift in Sources */,
 				75A7ABDC2939328800EC588C /* Mapper.swift in Sources */,
 				75A7ABC12938C73500EC588C /* Datasource.swift in Sources */,
+				751F2CCB29559961002080DF /* TrendingLocalEntity.swift in Sources */,
 				75A7ABD02938CC1600EC588C /* Operation.swift in Sources */,
 				755D1B9F293A37360051E205 /* TrendingRemoteEntityToTrendingLocalEntityMapper.swift in Sources */,
 				756966412917FC0900906FAD /* TrendingApp.swift in Sources */,
@@ -1035,6 +1047,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		750BD30029536A2B00FB13B3 /* CoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				750BD30129536A2B00FB13B3 /* CoreData.xcdatamodel */,
+			);
+			currentVersion = 750BD30129536A2B00FB13B3 /* CoreData.xcdatamodel */;
+			path = CoreData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 756966352917FC0900906FAD /* Project object */;
 }

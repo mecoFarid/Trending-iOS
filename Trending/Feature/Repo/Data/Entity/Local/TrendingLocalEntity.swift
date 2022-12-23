@@ -2,32 +2,44 @@
 //  TrendingLocalEntity.swift
 //  Trending
 //
-//  Created by Farid Mammadov on 01.12.22.
+//  Created by Farid Mammadov on 23.12.22.
 //
 
 import Foundation
-struct TrendingLocalEntity{
-    let name: String
-    let language: String?
-    let stargazers_count: Int
-    let description: String?
-    let owner: OwnerLocalEntity
+import CoreData
+
+@objc(TrensingLocalEntity)
+public class TrendingLocalEntity: NSManagedObject{
     
-    init(name: String, language: String?, stargazers_count: Int, description: String?, owner: OwnerLocalEntity) {
-        self.name = name
-        self.language = language
-        self.stargazers_count = stargazers_count
-        self.description = description
-        self.owner = owner
+    static func initWithParams(
+        context: NSManagedObjectContext,
+        name: String,
+        language: String?,
+        stargazers_count: Int,
+        description_text: String?,
+        owner: OwnerLocalEntity
+    ) -> TrendingLocalEntity {
+        let entity = TrendingLocalEntity(context: context)
+        entity.description_text = description_text
+        entity.language = language
+        entity.name = name
+        entity.stargazers_count = Int64(stargazers_count)
+        entity.owner = owner
+        return entity
     }
 }
 
-struct OwnerLocalEntity{
-    let login: String
-    let avatar_url: String?
+@objc(OwnerLocalEntity)
+public class OwnerLocalEntity: NSManagedObject{
     
-    init(login: String, avatar_url: String?) {
-        self.login = login
-        self.avatar_url = avatar_url
+    static func initWithParams(
+        context: NSManagedObjectContext,
+        login: String,
+        avatar_url: String?
+    ) -> OwnerLocalEntity {
+        let entity = OwnerLocalEntity(context: context)
+        entity.login = login
+        entity.avatar_url = avatar_url
+        return entity
     }
 }
