@@ -18,7 +18,7 @@ class TrendingRemoteEntityToTrendingLocalEntityMapper<M: Mapper>: Mapper where M
     }
     
     func map(i: TrendingRemoteEntity) -> TrendingLocalEntity {
-        return TrendingLocalEntity.initWithParams(
+        return TrendingLocalEntity(
             context: nsManagedObjectContext,
             name: i.name,
             language: i.language,
@@ -38,7 +38,7 @@ class OwnerRemoteEntityToOwnerLocalEntityMapper: Mapper{
     }
     
     func map(i: OwnerRemoteEntity) -> OwnerLocalEntity {
-        return OwnerLocalEntity.initWithParams(
+        return OwnerLocalEntity(
             context: nsManagedObjectContext,
             login: i.login,
             avatar_url: i.avatar_url

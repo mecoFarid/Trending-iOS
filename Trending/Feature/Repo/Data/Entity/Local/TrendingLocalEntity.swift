@@ -11,35 +11,43 @@ import CoreData
 @objc(TrensingLocalEntity)
 public class TrendingLocalEntity: NSManagedObject{
     
-    static func initWithParams(
+    @NSManaged public var name: String
+    @NSManaged public var language: String?
+    @NSManaged public var stargazers_count: Int
+    @NSManaged public var description_text: String?
+    @NSManaged public var owner: OwnerLocalEntity
+    
+    
+    init(
         context: NSManagedObjectContext,
         name: String,
         language: String?,
         stargazers_count: Int,
         description_text: String?,
         owner: OwnerLocalEntity
-    ) -> TrendingLocalEntity {
-        let entity = TrendingLocalEntity(context: context)
-        entity.description_text = description_text
-        entity.language = language
-        entity.name = name
-        entity.stargazers_count = Int64(stargazers_count)
-        entity.owner = owner
-        return entity
+    ){
+        super.init(entity: NSEntityDescription.entity(forEntityName: "TrendingLocalEntity", in: context)!, insertInto: context)
+        self.description_text = description_text
+        self.language = language
+        self.name = name
+        self.stargazers_count = stargazers_count
+        self.owner = owner
     }
 }
 
 @objc(OwnerLocalEntity)
 public class OwnerLocalEntity: NSManagedObject{
     
-    static func initWithParams(
+    @NSManaged public var login: String
+    @NSManaged public var avatar_url: String?
+    
+    init(
         context: NSManagedObjectContext,
         login: String,
         avatar_url: String?
-    ) -> OwnerLocalEntity {
-        let entity = OwnerLocalEntity(context: context)
-        entity.login = login
-        entity.avatar_url = avatar_url
-        return entity
+    ) {
+        super.init(entity: NSEntityDescription.entity(forEntityName: "OwnerLocalEntity", in: context)!, insertInto: context)
+        self.login = login
+        self.avatar_url = avatar_url
     }
 }

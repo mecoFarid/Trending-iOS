@@ -16,11 +16,11 @@ class TrendingLocalEntityToTrendingLocalEntityMapper<M: Mapper>: Mapper where M.
     
     func map(i: TrendingLocalEntity) -> Trending {
         return Trending(
-            name: i.name!,
+            name: i.name,
             language: i.language,
-            stargazersCount: Int(i.stargazers_count),
+            stargazersCount: i.stargazers_count,
             description: i.description,
-            owner: ownerMapper.map(i: i.owner!)
+            owner: ownerMapper.map(i: i.owner)
         )
     }
 }
@@ -29,7 +29,7 @@ class OwnerLocalEntityToOwnerMapper: Mapper{
     
     func map(i: OwnerLocalEntity) -> Owner {
         return Owner(
-            login: i.login!, avatarUrl: i.avatar_url
+            login: i.login, avatarUrl: i.avatar_url
         )
     }
 }
