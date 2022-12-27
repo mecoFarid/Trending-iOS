@@ -14,6 +14,8 @@
 		750BD2FF2951AB4200FB13B3 /* Query+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750BD2FE2951AB4200FB13B3 /* Query+Extensions.swift */; };
 		750BD30229536A2B00FB13B3 /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 750BD30029536A2B00FB13B3 /* CoreData.xcdatamodeld */; };
 		751F2CCB29559961002080DF /* TrendingLocalEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751F2CCA29559961002080DF /* TrendingLocalEntity.swift */; };
+		751F2D0E2956FFD9002080DF /* TrendingLocalGRDBDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751F2D0D2956FFD9002080DF /* TrendingLocalGRDBDao.swift */; };
+		751F2D18295A0D7C002080DF /* BaseRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751F2D17295A0D7C002080DF /* BaseRecord.swift */; };
 		755D1B972939EC350051E205 /* GetTrendingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755D1B962939EC350051E205 /* GetTrendingInteractor.swift */; };
 		755D1B9B2939EED60051E205 /* Trending.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755D1B9A2939EED60051E205 /* Trending.swift */; };
 		755D1B9D2939F0100051E205 /* GetTrendingQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755D1B9C2939F0100051E205 /* GetTrendingQuery.swift */; };
@@ -33,6 +35,10 @@
 		75745E4C2949D44700624AD1 /* TrendingRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75745E4B2949D44700624AD1 /* TrendingRepositoryTests.swift */; };
 		757FC8E72950A76400D62C54 /* TestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757FC8E62950A76400D62C54 /* TestUtils.swift */; };
 		757FC8EB2950C7A800D62C54 /* TrendingObjectMother.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757FC8EA2950C7A800D62C54 /* TrendingObjectMother.swift */; };
+		759752B3295AD3E200E444B5 /* QueryInterfaceRequest+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759752B2295AD3E200E444B5 /* QueryInterfaceRequest+Extensions.swift */; };
+		759752B5295ADF2100E444B5 /* Array+GRDBExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759752B4295ADF2100E444B5 /* Array+GRDBExtensions.swift */; };
+		759752BA295AF2AC00E444B5 /* Array+GRDBExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759752B9295AF2AC00E444B5 /* Array+GRDBExtensionsTests.swift */; };
+		759752BC295AF65100E444B5 /* ExceptionUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759752BB295AF65100E444B5 /* ExceptionUtils.swift */; };
 		75A7ABBE2938C72000EC588C /* TrendingRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A7ABBD2938C71F00EC588C /* TrendingRepository.swift */; };
 		75A7ABC12938C73500EC588C /* Datasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A7ABC02938C73500EC588C /* Datasource.swift */; };
 		75A7ABC32938C76200EC588C /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A7ABC22938C76200EC588C /* Query.swift */; };
@@ -73,6 +79,8 @@
 		750BD2FE2951AB4200FB13B3 /* Query+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Query+Extensions.swift"; sourceTree = "<group>"; };
 		750BD30129536A2B00FB13B3 /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
 		751F2CCA29559961002080DF /* TrendingLocalEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingLocalEntity.swift; sourceTree = "<group>"; };
+		751F2D0D2956FFD9002080DF /* TrendingLocalGRDBDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingLocalGRDBDao.swift; sourceTree = "<group>"; };
+		751F2D17295A0D7C002080DF /* BaseRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRecord.swift; sourceTree = "<group>"; };
 		755D1B962939EC350051E205 /* GetTrendingInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTrendingInteractor.swift; sourceTree = "<group>"; };
 		755D1B9A2939EED60051E205 /* Trending.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trending.swift; sourceTree = "<group>"; };
 		755D1B9C2939F0100051E205 /* GetTrendingQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTrendingQuery.swift; sourceTree = "<group>"; };
@@ -95,6 +103,10 @@
 		75745E4B2949D44700624AD1 /* TrendingRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingRepositoryTests.swift; sourceTree = "<group>"; };
 		757FC8E62950A76400D62C54 /* TestUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUtils.swift; sourceTree = "<group>"; };
 		757FC8EA2950C7A800D62C54 /* TrendingObjectMother.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingObjectMother.swift; sourceTree = "<group>"; };
+		759752B2295AD3E200E444B5 /* QueryInterfaceRequest+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QueryInterfaceRequest+Extensions.swift"; sourceTree = "<group>"; };
+		759752B4295ADF2100E444B5 /* Array+GRDBExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+GRDBExtensions.swift"; sourceTree = "<group>"; };
+		759752B9295AF2AC00E444B5 /* Array+GRDBExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+GRDBExtensionsTests.swift"; sourceTree = "<group>"; };
+		759752BB295AF65100E444B5 /* ExceptionUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExceptionUtils.swift; sourceTree = "<group>"; };
 		75A7ABBD2938C71F00EC588C /* TrendingRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingRepository.swift; sourceTree = "<group>"; };
 		75A7ABC02938C73500EC588C /* Datasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Datasource.swift; sourceTree = "<group>"; };
 		75A7ABC22938C76200EC588C /* Query.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Query.swift; sourceTree = "<group>"; };
@@ -176,6 +188,16 @@
 			path = Local;
 			sourceTree = "<group>";
 		};
+		751F2D16295A0CD3002080DF /* GRDB */ = {
+			isa = PBXGroup;
+			children = (
+				751F2D17295A0D7C002080DF /* BaseRecord.swift */,
+				759752B2295AD3E200E444B5 /* QueryInterfaceRequest+Extensions.swift */,
+				759752B4295ADF2100E444B5 /* Array+GRDBExtensions.swift */,
+			);
+			path = GRDB;
+			sourceTree = "<group>";
+		};
 		755D1B982939EEC00051E205 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
@@ -211,6 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				755D1BA9293A7B8E0051E205 /* RuntimeException.swift */,
+				759752BB295AF65100E444B5 /* ExceptionUtils.swift */,
 			);
 			path = Exception;
 			sourceTree = "<group>";
@@ -260,11 +283,9 @@
 		756966502917FC0A00906FAD /* TrendingTests */ = {
 			isa = PBXGroup;
 			children = (
-				750BD2FD2951A63900FB13B3 /* ObjectMother */,
-				750BD2FC2951A5C800FB13B3 /* Extensions */,
+				759752B7295AF28100E444B5 /* Common */,
+				759752B6295AF24D00E444B5 /* Helper */,
 				75F18025293D128E0038F64C /* Feature */,
-				757FC8E62950A76400D62C54 /* TestUtils.swift */,
-				75745E472949D41300624AD1 /* GeneratedMocks.swift */,
 			);
 			path = TrendingTests;
 			sourceTree = "<group>";
@@ -292,6 +313,33 @@
 				75745E4B2949D44700624AD1 /* TrendingRepositoryTests.swift */,
 			);
 			path = Repo;
+			sourceTree = "<group>";
+		};
+		759752B6295AF24D00E444B5 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				750BD2FD2951A63900FB13B3 /* ObjectMother */,
+				750BD2FC2951A5C800FB13B3 /* Extensions */,
+				757FC8E62950A76400D62C54 /* TestUtils.swift */,
+				75745E472949D41300624AD1 /* GeneratedMocks.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		759752B7295AF28100E444B5 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				759752B8295AF28E00E444B5 /* GRDB */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		759752B8295AF28E00E444B5 /* GRDB */ = {
+			isa = PBXGroup;
+			children = (
+				759752B9295AF2AC00E444B5 /* Array+GRDBExtensionsTests.swift */,
+			);
+			path = GRDB;
 			sourceTree = "<group>";
 		};
 		75A7ABB8293888D600EC588C /* Feature */ = {
@@ -345,6 +393,7 @@
 		75A7ABBF2938C72800EC588C /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				751F2D16295A0CD3002080DF /* GRDB */,
 				755D1BAB293A7B920051E205 /* Exception */,
 				755D1BA4293A4E620051E205 /* Data */,
 			);
@@ -365,6 +414,7 @@
 			children = (
 				75A7ABC92938C90D00EC588C /* TrendingLocalDatasource.swift */,
 				755D1BA7293A650B0051E205 /* TrendingLocalDao.swift */,
+				751F2D0D2956FFD9002080DF /* TrendingLocalGRDBDao.swift */,
 			);
 			path = Local;
 			sourceTree = "<group>";
@@ -454,6 +504,7 @@
 				756966392917FC0900906FAD /* Sources */,
 				7569663A2917FC0900906FAD /* Frameworks */,
 				7569663B2917FC0900906FAD /* Resources */,
+				61BC8DE792F4D5FDD52F991F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -493,6 +544,7 @@
 				756966532917FC0A00906FAD /* Sources */,
 				756966542917FC0A00906FAD /* Frameworks */,
 				756966552917FC0A00906FAD /* Resources */,
+				62351776FDCDE3AF446EB213 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -635,6 +687,40 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TrendingTests/Pods-TrendingTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		61BC8DE792F4D5FDD52F991F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Trending/Pods-Trending-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Trending/Pods-Trending-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Trending/Pods-Trending-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		62351776FDCDE3AF446EB213 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Trending-TrendingUITests/Pods-Trending-TrendingUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Trending-TrendingUITests/Pods-Trending-TrendingUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Trending-TrendingUITests/Pods-Trending-TrendingUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		75745E462949BBDA00624AD1 /* Cuckoo Generator */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -685,6 +771,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				751F2D0E2956FFD9002080DF /* TrendingLocalGRDBDao.swift in Sources */,
 				75A7ABC32938C76200EC588C /* Query.swift in Sources */,
 				75A7ABDA2939326100EC588C /* DatasourceMapper.swift in Sources */,
 				75B12363293F24CB0006F70A /* Result+Extensions.swift in Sources */,
@@ -693,6 +780,7 @@
 				755D1B972939EC350051E205 /* GetTrendingInteractor.swift in Sources */,
 				756966432917FC0900906FAD /* ContentView.swift in Sources */,
 				75A7ABCA2938C90D00EC588C /* TrendingLocalDatasource.swift in Sources */,
+				759752BC295AF65100E444B5 /* ExceptionUtils.swift in Sources */,
 				750BD30229536A2B00FB13B3 /* CoreData.xcdatamodeld in Sources */,
 				755D1BA6293A64B60051E205 /* TrendingRemoteService.swift in Sources */,
 				755D1BA1293A40EA0051E205 /* TrendingLocalEntityToTrendingEntityMapper.swift in Sources */,
@@ -700,11 +788,14 @@
 				75A7ABBE2938C72000EC588C /* TrendingRepository.swift in Sources */,
 				75A7ABDC2939328800EC588C /* Mapper.swift in Sources */,
 				75A7ABC12938C73500EC588C /* Datasource.swift in Sources */,
+				759752B3295AD3E200E444B5 /* QueryInterfaceRequest+Extensions.swift in Sources */,
 				751F2CCB29559961002080DF /* TrendingLocalEntity.swift in Sources */,
 				75A7ABD02938CC1600EC588C /* Operation.swift in Sources */,
+				751F2D18295A0D7C002080DF /* BaseRecord.swift in Sources */,
 				755D1B9F293A37360051E205 /* TrendingRemoteEntityToTrendingLocalEntityMapper.swift in Sources */,
 				756966412917FC0900906FAD /* TrendingApp.swift in Sources */,
 				75A7ABC52938C8D900EC588C /* Repository.swift in Sources */,
+				759752B5295ADF2100E444B5 /* Array+GRDBExtensions.swift in Sources */,
 				755D1B9B2939EED60051E205 /* Trending.swift in Sources */,
 				755D1BA8293A650B0051E205 /* TrendingLocalDao.swift in Sources */,
 				75A7ABD72939230F00EC588C /* TrendingRemoteEntity.swift in Sources */,
@@ -719,6 +810,7 @@
 				75745E482949D41300624AD1 /* GeneratedMocks.swift in Sources */,
 				757FC8E72950A76400D62C54 /* TestUtils.swift in Sources */,
 				750BD2FF2951AB4200FB13B3 /* Query+Extensions.swift in Sources */,
+				759752BA295AF2AC00E444B5 /* Array+GRDBExtensionsTests.swift in Sources */,
 				757FC8EB2950C7A800D62C54 /* TrendingObjectMother.swift in Sources */,
 				750BD2F92951A43000FB13B3 /* Trending+Extensions.swift in Sources */,
 				75745E4C2949D44700624AD1 /* TrendingRepositoryTests.swift in Sources */,

@@ -14,7 +14,11 @@ extension Query{
         if self is Q  {
             return self as! Q
         }else {
-            fatalError("Query not supported\(self)")
+            fatalError("Query \(self) can not be cast to \(Q.self)")
         }
+    }
+    
+    func notSupported() {
+        fatalError("Query not supported\(self)")
     }
 }

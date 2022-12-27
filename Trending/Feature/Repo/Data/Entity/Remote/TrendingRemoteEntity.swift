@@ -7,13 +7,15 @@
 
 import Foundation
 struct TrendingRemoteEntity{
+    let id: Int
     let name: String
     let language: String?
     let stargazers_count: Int
     let description: String?
     let owner: OwnerRemoteEntity
     
-    init(name: String, language: String?, stargazers_count: Int, description: String?, owner: OwnerRemoteEntity) {
+    init(id: Int, name: String, language: String?, stargazers_count: Int, description: String?, owner: OwnerRemoteEntity) {
+        self.id = id
         self.name = name
         self.language = language
         self.stargazers_count = stargazers_count

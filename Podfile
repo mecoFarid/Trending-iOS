@@ -6,6 +6,7 @@ target 'Trending' do
   use_frameworks!
 
   # Pods for Trending
+  pod 'GRDB.swift'
 
   target 'TrendingTests' do
     inherit! :search_paths

@@ -2,21 +2,27 @@ PODS:
   - Cuckoo (1.9.1):
     - Cuckoo/Swift (= 1.9.1)
   - Cuckoo/Swift (1.9.1)
+  - GRDB.swift (6.5.0):
+    - GRDB.swift/standard (= 6.5.0)
+  - GRDB.swift/standard (6.5.0)
   - Nimble (11.2.1)
 
 DEPENDENCIES:
   - Cuckoo
+  - GRDB.swift
   - Nimble
 
 SPEC REPOS:
   trunk:
     - Cuckoo
+    - GRDB.swift
     - Nimble
 
 SPEC CHECKSUMS:
   Cuckoo: 1b6793fe60fac29af50b0a5915bc309a4a1ac673
+  GRDB.swift: 390578b9b9c42ebcc03d2b94da520fb46930d6ea
   Nimble: 516ac503a0fafaa8e41dbb4a70a61be421fa893a
 
-PODFILE CHECKSUM: b986a6590f7dd1c8905585eb7d16a68589970ffb
+PODFILE CHECKSUM: ca4a43990cfac2b096319cd7c0399a38176f28ff
 
 COCOAPODS: 1.11.3

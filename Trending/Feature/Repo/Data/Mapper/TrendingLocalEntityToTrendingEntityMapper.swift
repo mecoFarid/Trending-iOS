@@ -18,7 +18,7 @@ class TrendingLocalEntityToTrendingLocalEntityMapper<M: Mapper>: Mapper where M.
         return Trending(
             name: i.name,
             language: i.language,
-            stargazersCount: i.stargazers_count,
+            stargazersCount: i.stargazersCount,
             description: i.description,
             owner: ownerMapper.map(i: i.owner)
         )
@@ -29,7 +29,7 @@ class OwnerLocalEntityToOwnerMapper: Mapper{
     
     func map(i: OwnerLocalEntity) -> Owner {
         return Owner(
-            login: i.login, avatarUrl: i.avatar_url
+            login: i.login, avatarUrl: i.avatarUrl
         )
     }
 }
