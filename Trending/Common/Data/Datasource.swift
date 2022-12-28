@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol Datasource{
+protocol Datasource<T, E>{
     associatedtype T
     associatedtype E: DataException
     func get(query: Query) -> Result<T, E>

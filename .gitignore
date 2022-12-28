@@ -82,8 +82,8 @@ build/
 
 ####
 # Third party generated files
-TrendingTests/GeneratedMocks.swift
-*.generated.swift
+**/GeneratedMocks.swift
+**/*.generated.swift
 *.xcodeproj/MockingbirdCache/
 
 #####

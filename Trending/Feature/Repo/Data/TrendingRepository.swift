@@ -9,14 +9,12 @@ import Foundation
 
 typealias TrendingResult<T> = Result<[T], DataException>
 
-class TrendingRepository<MD: Datasource, CD: Datasource>:
-    Repository where MD.T == [Trending], MD.E == DataException,
-                     CD.T == [Trending], CD.E == DataException {
+class TrendingRepository: Repository{
     
-    private let mainDataSource: MD
-    private let cacheDataSource: CD
+    private let mainDataSource: any Datasource<[Trending], DataException>
+    private let cacheDataSource: any Datasource<[Trending], DataException>
     
-    init(_ mainDataSource: MD, _ cacheDataSource: CD) {
+    init(_ mainDataSource: any Datasource<[Trending], DataException>, _ cacheDataSource: any Datasource<[Trending], DataException>) {
         self.mainDataSource = mainDataSource
         self.cacheDataSource = cacheDataSource
     }

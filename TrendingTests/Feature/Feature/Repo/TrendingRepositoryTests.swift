@@ -16,7 +16,7 @@ final class TrendingRepositoryTests: XCTestCase{
     
     private let cacheDatasource = MockDatasource<[Trending], DataException>()
     private let mainDatasource = MockDatasource<[Trending], DataException>()
-    private var repository: TrendingRepository<MockDatasource<[Trending], DataException>, MockDatasource<[Trending], DataException>>!
+    private var repository: TrendingRepository!
     
     override func setUp() {
         repository = TrendingRepository(mainDatasource, cacheDatasource)

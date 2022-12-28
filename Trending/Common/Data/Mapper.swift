@@ -6,7 +6,7 @@
 //
 
 import Foundation
-protocol Mapper{
+protocol Mapper<I, O>{
     associatedtype I
     associatedtype O
     

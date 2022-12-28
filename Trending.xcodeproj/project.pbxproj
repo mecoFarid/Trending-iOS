@@ -12,7 +12,6 @@
 		750BD2F92951A43000FB13B3 /* Trending+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750BD2F82951A43000FB13B3 /* Trending+Extensions.swift */; };
 		750BD2FB2951A54500FB13B3 /* Range+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750BD2FA2951A54500FB13B3 /* Range+Extensions.swift */; };
 		750BD2FF2951AB4200FB13B3 /* Query+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750BD2FE2951AB4200FB13B3 /* Query+Extensions.swift */; };
-		750BD30229536A2B00FB13B3 /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 750BD30029536A2B00FB13B3 /* CoreData.xcdatamodeld */; };
 		751F2CCB29559961002080DF /* TrendingLocalEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751F2CCA29559961002080DF /* TrendingLocalEntity.swift */; };
 		751F2D0E2956FFD9002080DF /* TrendingLocalGRDBDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751F2D0D2956FFD9002080DF /* TrendingLocalGRDBDao.swift */; };
 		751F2D18295A0D7C002080DF /* BaseRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751F2D17295A0D7C002080DF /* BaseRecord.swift */; };
@@ -31,7 +30,6 @@
 		756966482917FC0A00906FAD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 756966472917FC0A00906FAD /* Preview Assets.xcassets */; };
 		7569665C2917FC0A00906FAD /* TrendingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7569665B2917FC0A00906FAD /* TrendingUITests.swift */; };
 		7569665E2917FC0A00906FAD /* TrendingUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7569665D2917FC0A00906FAD /* TrendingUITestsLaunchTests.swift */; };
-		75745E482949D41300624AD1 /* GeneratedMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75745E472949D41300624AD1 /* GeneratedMocks.swift */; };
 		75745E4C2949D44700624AD1 /* TrendingRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75745E4B2949D44700624AD1 /* TrendingRepositoryTests.swift */; };
 		757FC8E72950A76400D62C54 /* TestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757FC8E62950A76400D62C54 /* TestUtils.swift */; };
 		757FC8EB2950C7A800D62C54 /* TrendingObjectMother.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757FC8EA2950C7A800D62C54 /* TrendingObjectMother.swift */; };
@@ -50,6 +48,7 @@
 		75A7ABDA2939326100EC588C /* DatasourceMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A7ABD92939326100EC588C /* DatasourceMapper.swift */; };
 		75A7ABDC2939328800EC588C /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A7ABDB2939328800EC588C /* Mapper.swift */; };
 		75B12363293F24CB0006F70A /* Result+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B12362293F24CB0006F70A /* Result+Extensions.swift */; };
+		75C504F0295C7856009D40A9 /* GeneratedMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C504EF295C7856009D40A9 /* GeneratedMocks.swift */; };
 		E6271849CF542DBF2F407161 /* Pods_Trending_TrendingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72A569392A4CF1EC735EC83A /* Pods_Trending_TrendingUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -77,7 +76,6 @@
 		750BD2F82951A43000FB13B3 /* Trending+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Trending+Extensions.swift"; sourceTree = "<group>"; };
 		750BD2FA2951A54500FB13B3 /* Range+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Range+Extensions.swift"; sourceTree = "<group>"; };
 		750BD2FE2951AB4200FB13B3 /* Query+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Query+Extensions.swift"; sourceTree = "<group>"; };
-		750BD30129536A2B00FB13B3 /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
 		751F2CCA29559961002080DF /* TrendingLocalEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingLocalEntity.swift; sourceTree = "<group>"; };
 		751F2D0D2956FFD9002080DF /* TrendingLocalGRDBDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingLocalGRDBDao.swift; sourceTree = "<group>"; };
 		751F2D17295A0D7C002080DF /* BaseRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRecord.swift; sourceTree = "<group>"; };
@@ -99,7 +97,6 @@
 		756966572917FC0A00906FAD /* TrendingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrendingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7569665B2917FC0A00906FAD /* TrendingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingUITests.swift; sourceTree = "<group>"; };
 		7569665D2917FC0A00906FAD /* TrendingUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		75745E472949D41300624AD1 /* GeneratedMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedMocks.swift; sourceTree = "<group>"; };
 		75745E4B2949D44700624AD1 /* TrendingRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingRepositoryTests.swift; sourceTree = "<group>"; };
 		757FC8E62950A76400D62C54 /* TestUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUtils.swift; sourceTree = "<group>"; };
 		757FC8EA2950C7A800D62C54 /* TrendingObjectMother.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingObjectMother.swift; sourceTree = "<group>"; };
@@ -118,6 +115,7 @@
 		75A7ABD92939326100EC588C /* DatasourceMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatasourceMapper.swift; sourceTree = "<group>"; };
 		75A7ABDB2939328800EC588C /* Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mapper.swift; sourceTree = "<group>"; };
 		75B12362293F24CB0006F70A /* Result+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Result+Extensions.swift"; sourceTree = "<group>"; };
+		75C504EF295C7856009D40A9 /* GeneratedMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedMocks.swift; sourceTree = "<group>"; };
 		7B3EC2B819F5A682571BAB36 /* Pods-TrendingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrendingTests.release.xcconfig"; path = "Target Support Files/Pods-TrendingTests/Pods-TrendingTests.release.xcconfig"; sourceTree = "<group>"; };
 		9623816198F8FB5BCB98602B /* Pods_Trending.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Trending.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7D9C0B646BA9F44298695C5 /* Pods_TrendingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrendingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -170,14 +168,6 @@
 				757FC8EA2950C7A800D62C54 /* TrendingObjectMother.swift */,
 			);
 			path = ObjectMother;
-			sourceTree = "<group>";
-		};
-		750BD30329536A3B00FB13B3 /* CoreData */ = {
-			isa = PBXGroup;
-			children = (
-				750BD30029536A2B00FB13B3 /* CoreData.xcdatamodeld */,
-			);
-			path = CoreData;
 			sourceTree = "<group>";
 		};
 		751F2CC9295590B9002080DF /* Local */ = {
@@ -241,7 +231,6 @@
 		756966342917FC0900906FAD = {
 			isa = PBXGroup;
 			children = (
-				750BD30329536A3B00FB13B3 /* CoreData */,
 				7569663F2917FC0900906FAD /* Trending */,
 				756966502917FC0A00906FAD /* TrendingTests */,
 				7569665A2917FC0A00906FAD /* TrendingUITests */,
@@ -321,7 +310,7 @@
 				750BD2FD2951A63900FB13B3 /* ObjectMother */,
 				750BD2FC2951A5C800FB13B3 /* Extensions */,
 				757FC8E62950A76400D62C54 /* TestUtils.swift */,
-				75745E472949D41300624AD1 /* GeneratedMocks.swift */,
+				75C504EF295C7856009D40A9 /* GeneratedMocks.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -735,12 +724,12 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(SRCROOT)/$(PROJECT_NAME)Tests/GeneratedMocks.swift",
+				"$(SRCROOT)/$(PROJECT_NAME)Tests/Helper/GeneratedMocks.swift",
 				"",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ $ACTION == \"indexbuild\" ]; then\n  echo \"Not running Cuckoo generator during indexing.\"\n  exit 0 \nfi\n\n# Skip for preview builds\nif [ \"${ENABLE_PREVIEWS}\" = \"YES\" ]; then\n  echo \"Not running Cuckoo generator during preview builds.\"\n  exit 0\nfi\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\n\"${PODS_ROOT}/Cuckoo/run\" generate --testable \"${PROJECT_NAME}\" \\\n--output \"${SRCROOT}/${PROJECT_NAME}Tests/GeneratedMocks.swift\"\n# ... and so forth, the last line should never end with a backslash\n\n";
+			shellScript = "if [ $ACTION == \"indexbuild\" ]; then\n  echo \"Not running Cuckoo generator during indexing.\"\n  exit 0 \nfi\n\n# Skip for preview builds\nif [ \"${ENABLE_PREVIEWS}\" = \"YES\" ]; then\n  echo \"Not running Cuckoo generator during preview builds.\"\n  exit 0\nfi\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\n\"${PODS_ROOT}/Cuckoo/run\" generate --testable \"${PROJECT_NAME}\" \\\n--output \"${SRCROOT}/${PROJECT_NAME}Tests/Helper/GeneratedMocks.swift\"\n# ... and so forth, the last line should never end with a backslash\n\n";
 		};
 		B7C4608529554E7AD45A5D57 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -781,7 +770,6 @@
 				756966432917FC0900906FAD /* ContentView.swift in Sources */,
 				75A7ABCA2938C90D00EC588C /* TrendingLocalDatasource.swift in Sources */,
 				759752BC295AF65100E444B5 /* ExceptionUtils.swift in Sources */,
-				750BD30229536A2B00FB13B3 /* CoreData.xcdatamodeld in Sources */,
 				755D1BA6293A64B60051E205 /* TrendingRemoteService.swift in Sources */,
 				755D1BA1293A40EA0051E205 /* TrendingLocalEntityToTrendingEntityMapper.swift in Sources */,
 				755D1BA3293A4E170051E205 /* DataException.swift in Sources */,
@@ -807,10 +795,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75745E482949D41300624AD1 /* GeneratedMocks.swift in Sources */,
 				757FC8E72950A76400D62C54 /* TestUtils.swift in Sources */,
 				750BD2FF2951AB4200FB13B3 /* Query+Extensions.swift in Sources */,
 				759752BA295AF2AC00E444B5 /* Array+GRDBExtensionsTests.swift in Sources */,
+				75C504F0295C7856009D40A9 /* GeneratedMocks.swift in Sources */,
 				757FC8EB2950C7A800D62C54 /* TrendingObjectMother.swift in Sources */,
 				750BD2F92951A43000FB13B3 /* Trending+Extensions.swift in Sources */,
 				75745E4C2949D44700624AD1 /* TrendingRepositoryTests.swift in Sources */,
@@ -1139,19 +1127,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		750BD30029536A2B00FB13B3 /* CoreData.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				750BD30129536A2B00FB13B3 /* CoreData.xcdatamodel */,
-			);
-			currentVersion = 750BD30129536A2B00FB13B3 /* CoreData.xcdatamodel */;
-			path = CoreData.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 756966352917FC0900906FAD /* Project object */;
 }

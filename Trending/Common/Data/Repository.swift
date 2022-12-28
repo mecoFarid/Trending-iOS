@@ -6,7 +6,7 @@
 //
 
 import Foundation
-protocol Repository{
+protocol Repository<T, E>{
     associatedtype T
     associatedtype E: DataException
     func get(query: Query, operation: Operation) -> Result<T, E>
