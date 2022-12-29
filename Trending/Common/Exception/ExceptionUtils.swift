@@ -7,9 +7,10 @@
 
 import Foundation
 
-func safeOrFail<T>(_ block: () throws -> T) -> T{
+@discardableResult
+func safeOrFail<T, E: DataException>(_ block: () throws -> T) -> Result<T, E>{
     do{
-        return try block()
+        return try Result.success(block())
     }catch{
         fatalError("Failed with \(error)")
     }

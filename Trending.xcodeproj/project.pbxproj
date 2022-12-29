@@ -35,7 +35,6 @@
 		757FC8EB2950C7A800D62C54 /* TrendingObjectMother.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757FC8EA2950C7A800D62C54 /* TrendingObjectMother.swift */; };
 		759752B3295AD3E200E444B5 /* QueryInterfaceRequest+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759752B2295AD3E200E444B5 /* QueryInterfaceRequest+Extensions.swift */; };
 		759752B5295ADF2100E444B5 /* Array+GRDBExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759752B4295ADF2100E444B5 /* Array+GRDBExtensions.swift */; };
-		759752BA295AF2AC00E444B5 /* Array+GRDBExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759752B9295AF2AC00E444B5 /* Array+GRDBExtensionsTests.swift */; };
 		759752BC295AF65100E444B5 /* ExceptionUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759752BB295AF65100E444B5 /* ExceptionUtils.swift */; };
 		75A7ABBE2938C72000EC588C /* TrendingRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A7ABBD2938C71F00EC588C /* TrendingRepository.swift */; };
 		75A7ABC12938C73500EC588C /* Datasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A7ABC02938C73500EC588C /* Datasource.swift */; };
@@ -102,7 +101,6 @@
 		757FC8EA2950C7A800D62C54 /* TrendingObjectMother.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingObjectMother.swift; sourceTree = "<group>"; };
 		759752B2295AD3E200E444B5 /* QueryInterfaceRequest+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QueryInterfaceRequest+Extensions.swift"; sourceTree = "<group>"; };
 		759752B4295ADF2100E444B5 /* Array+GRDBExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+GRDBExtensions.swift"; sourceTree = "<group>"; };
-		759752B9295AF2AC00E444B5 /* Array+GRDBExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+GRDBExtensionsTests.swift"; sourceTree = "<group>"; };
 		759752BB295AF65100E444B5 /* ExceptionUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExceptionUtils.swift; sourceTree = "<group>"; };
 		75A7ABBD2938C71F00EC588C /* TrendingRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingRepository.swift; sourceTree = "<group>"; };
 		75A7ABC02938C73500EC588C /* Datasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Datasource.swift; sourceTree = "<group>"; };
@@ -186,6 +184,14 @@
 				759752B4295ADF2100E444B5 /* Array+GRDBExtensions.swift */,
 			);
 			path = GRDB;
+			sourceTree = "<group>";
+		};
+		7539ECFB295CBB8B00D2B74E /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				75C504EF295C7856009D40A9 /* GeneratedMocks.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 		755D1B982939EEC00051E205 /* Interactor */ = {
@@ -272,7 +278,6 @@
 		756966502917FC0A00906FAD /* TrendingTests */ = {
 			isa = PBXGroup;
 			children = (
-				759752B7295AF28100E444B5 /* Common */,
 				759752B6295AF24D00E444B5 /* Helper */,
 				75F18025293D128E0038F64C /* Feature */,
 			);
@@ -307,28 +312,12 @@
 		759752B6295AF24D00E444B5 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				7539ECFB295CBB8B00D2B74E /* Mocks */,
 				750BD2FD2951A63900FB13B3 /* ObjectMother */,
 				750BD2FC2951A5C800FB13B3 /* Extensions */,
 				757FC8E62950A76400D62C54 /* TestUtils.swift */,
-				75C504EF295C7856009D40A9 /* GeneratedMocks.swift */,
 			);
 			path = Helper;
-			sourceTree = "<group>";
-		};
-		759752B7295AF28100E444B5 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				759752B8295AF28E00E444B5 /* GRDB */,
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
-		759752B8295AF28E00E444B5 /* GRDB */ = {
-			isa = PBXGroup;
-			children = (
-				759752B9295AF2AC00E444B5 /* Array+GRDBExtensionsTests.swift */,
-			);
-			path = GRDB;
 			sourceTree = "<group>";
 		};
 		75A7ABB8293888D600EC588C /* Feature */ = {
@@ -724,12 +713,12 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(SRCROOT)/$(PROJECT_NAME)Tests/Helper/GeneratedMocks.swift",
+				"$(SRCROOT)/$(PROJECT_NAME)Tests/Helper/Mocks/GeneratedMocks.swift",
 				"",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ $ACTION == \"indexbuild\" ]; then\n  echo \"Not running Cuckoo generator during indexing.\"\n  exit 0 \nfi\n\n# Skip for preview builds\nif [ \"${ENABLE_PREVIEWS}\" = \"YES\" ]; then\n  echo \"Not running Cuckoo generator during preview builds.\"\n  exit 0\nfi\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\n\"${PODS_ROOT}/Cuckoo/run\" generate --testable \"${PROJECT_NAME}\" \\\n--output \"${SRCROOT}/${PROJECT_NAME}Tests/Helper/GeneratedMocks.swift\"\n# ... and so forth, the last line should never end with a backslash\n\n";
+			shellScript = "if [ $ACTION == \"indexbuild\" ]; then\n  echo \"Not running Cuckoo generator during indexing.\"\n  exit 0 \nfi\n\n# Skip for preview builds\nif [ \"${ENABLE_PREVIEWS}\" = \"YES\" ]; then\n  echo \"Not running Cuckoo generator during preview builds.\"\n  exit 0\nfi\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\n\"${PODS_ROOT}/Cuckoo/run\" generate --testable \"${PROJECT_NAME}\" \\\n--output \"${SRCROOT}/${PROJECT_NAME}Tests/Helper/Mocks/GeneratedMocks.swift\"\n# ... and so forth, the last line should never end with a backslash\n\n";
 		};
 		B7C4608529554E7AD45A5D57 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -797,7 +786,6 @@
 			files = (
 				757FC8E72950A76400D62C54 /* TestUtils.swift in Sources */,
 				750BD2FF2951AB4200FB13B3 /* Query+Extensions.swift in Sources */,
-				759752BA295AF2AC00E444B5 /* Array+GRDBExtensionsTests.swift in Sources */,
 				75C504F0295C7856009D40A9 /* GeneratedMocks.swift in Sources */,
 				757FC8EB2950C7A800D62C54 /* TrendingObjectMother.swift in Sources */,
 				750BD2F92951A43000FB13B3 /* Trending+Extensions.swift in Sources */,

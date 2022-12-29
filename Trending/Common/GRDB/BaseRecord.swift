@@ -29,8 +29,24 @@ open class BaseRecord: Record{
     open override func encode(to container: inout PersistenceContainer) throws {
         container[BaseRecord.id] = id
     }
+    
+    @discardableResult
+    static func safeDeleteAll(_ db: Database, option: MultipleDeleteOptions = MultipleDeleteOptions()) -> Result<Int, DataException>{
+        return safeOrFail {
+            var deletedCount: Int = 0
+            try db.inTransaction{
+                deletedCount = try deleteAll(db)
+                return .commit
+            }
+            return deletedCount
+        }
+    }
 }
 
 extension BaseRecord{
     static let id = Column("id")
+}
+
+class MultipleDeleteOptions{
+    init() {}
 }

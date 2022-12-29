@@ -23,31 +23,29 @@ class TrendingLocalGRDBDao: TrendingLocalDao{
     
     func put(query: GetTrendingQuery, data: [TrendingLocalEntity]) -> TrendingResult<TrendingLocalEntity> {
         switch(query){
-        case .getAllTrendginQuery: return putAllTrendingData(data)
+        case .getAllTrendginQuery: putAllTrendingData(data)
         }
+        return getAllTrendingData()
     }
     
     private func getAllTrendingData() -> TrendingResult<TrendingLocalEntity>{
-        let result: [TrendingOwnerEntity] = TrendingLocalEntity
+        let result: Result<[TrendingOwnerEntity], DataException> = TrendingLocalEntity
             .including(required: TrendingLocalEntity.owner)
             .asRequest(of: TrendingOwnerEntity.self)
             .fetchAllOrFail(db)
         
-        let trendingList = result.map { trendingOwner in
-            let trending = trendingOwner.trending
-            trending.owner = trendingOwner.owner
-            return trending
+        return result.map { succes in
+            let trendingList = succes.map { trendingOwner in
+                let trending = trendingOwner.trending
+                trending.owner = trendingOwner.owner
+                return trending
+            }
+            return trendingList
         }
-        
-        return Result.success(trendingList)
     }
     
-    private func putAllTrendingData(_ data: [TrendingLocalEntity]) -> TrendingResult<TrendingLocalEntity> {
-        fatalError()
-//        TrendingLocalEntity.deleteAll(db)
-//
-//        data.forEach { i in
-//            i.insert(<#T##db: Database##Database#>)
-//        }
+    private func putAllTrendingData(_ data: [TrendingLocalEntity]){
+        TrendingLocalEntity.safeDeleteAll(db)
+        data.safeInsertAll(db)
     }
 }

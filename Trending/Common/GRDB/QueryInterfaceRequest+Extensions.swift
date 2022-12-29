@@ -9,7 +9,9 @@ import Foundation
 import GRDB
 
 extension QueryInterfaceRequest{
-    public func fetchAllOrFail<RowDecoder: FetchableRecord>(_ db: Database) -> [RowDecoder] {
-        safeOrFail { try RowDecoder.fetchAll(db, self) }
+    func fetchAllOrFail<RowDecoder: FetchableRecord>(_ db: Database) -> Result<[RowDecoder], DataException> {
+        return safeOrFail {
+            try RowDecoder.fetchAll(db, self)
+        }
     }
 }
