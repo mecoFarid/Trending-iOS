@@ -6,14 +6,14 @@
 //
 
 import Foundation
-class GetTrendingInteractor<R: Repository> where R.T == [Trending], R.E == DataException{
-    let repository: R
-    
-    init(repository: R) {
+class GetTrendingInteractor{
+    let repository: any Repository<[Trending], DataException>
+
+    init(_ repository: any Repository<[Trending], DataException>) {
         self.repository = repository
     }
     
-    func execute(query: GetTrendingQuery, operation: Operation) -> TrendingResult<Trending>{
-        return repository.get(query: query, operation: operation)
+    func execute(query: GetTrendingQuery, operation: Operation) async -> TrendingResult<Trending>{
+        return await repository.get(query: query, operation: operation)
     }
 }

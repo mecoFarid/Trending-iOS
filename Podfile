@@ -7,6 +7,9 @@ target 'Trending' do
 
   # Pods for Trending
   pod 'GRDB.swift'
+  pod 'Alamofire'
+  pod 'Kingfisher', '~> 6.3.1-xcode13'
+  pod 'lottie-ios'
 
   target 'TrendingTests' do
     inherit! :search_paths

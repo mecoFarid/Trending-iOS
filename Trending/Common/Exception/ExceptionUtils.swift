@@ -15,3 +15,11 @@ func safeOrFail<T, E: DataException>(_ block: () throws -> T) -> Result<T, E>{
         fatalError("Failed with \(error)")
     }
 }
+
+func safeOrFail<T, E: DataException>(_ block: () async throws -> T) async -> Result<T, E>{
+    do{
+        return try await Result.success(block())
+    }catch{
+        fatalError("Failed with \(error)")
+    }
+}

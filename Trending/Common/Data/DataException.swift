@@ -6,21 +6,11 @@
 //
 
 import Foundation
-class DataException: LocalizedError, Equatable{
+class DataException: RuntimeException{
 
-    var errorDescription: String?
-    
-    fileprivate init(errorDescription: String? = nil) {
-        self.errorDescription = errorDescription
-    }
-    
     class DataNotFoundException: DataException{
-        override init(errorDescription: String? = nil) {
-            super.init(errorDescription: errorDescription)
+        override init(_ errorDescription: String? = nil) {
+            super.init(errorDescription)
         }
-    }
-    
-    static func == (lhs: DataException, rhs: DataException) -> Bool {
-        return lhs.errorDescription == rhs.errorDescription
     }
 }

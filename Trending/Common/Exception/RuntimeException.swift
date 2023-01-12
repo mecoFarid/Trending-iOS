@@ -6,17 +6,21 @@
 //
 
 import Foundation
-class RuntimeException: LocalizedError{
+class RuntimeException: LocalizedError, Equatable{
     
     var errorDescription: String?
     
-    fileprivate init(errorDescription: String? = nil) {
+    init(_ errorDescription: String? = nil) {
         self.errorDescription = errorDescription
     }
     
-    class UnsupportedException: RuntimeException{
-        override init(errorDescription: String? = nil) {
-            super.init(errorDescription: errorDescription)
-        }
+    static func == (lhs: RuntimeException, rhs: RuntimeException) -> Bool {
+        return lhs.errorDescription == rhs.errorDescription
+    }
+}
+
+extension RuntimeException{
+    static func notImplemented(_ error: String = String()) -> Never{
+        fatalError(error)
     }
 }

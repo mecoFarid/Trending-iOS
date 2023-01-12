@@ -18,8 +18,8 @@ class TrendingLocalEntity: BaseRecord, Decodable{
         OwnerLocalEntity.self,
         key: TrendingLocalEntity.id.name,
         using: ForeignKey(
-            [TrendingLocalEntity.id.name],
-            to: [OwnerLocalEntity.id.name]
+            [OwnerLocalEntity.trendingId.name],
+            to: [TrendingLocalEntity.id.name]
         )
     ).forKey(TrendingOwnerEntity.owner)
     var owner: OwnerLocalEntity!
@@ -46,7 +46,6 @@ class TrendingLocalEntity: BaseRecord, Decodable{
         stargazersCount = row[TrendingLocalEntity.stargazersCount]
         description = row[TrendingLocalEntity.description]
         try super.init(row: row)
-        id = row[TrendingLocalEntity.name]
     }
     
     override func encode(to container: inout PersistenceContainer) throws {
@@ -54,7 +53,7 @@ class TrendingLocalEntity: BaseRecord, Decodable{
         container[TrendingLocalEntity.language] = language
         container[TrendingLocalEntity.stargazersCount] = stargazersCount
         container[TrendingLocalEntity.description] = description
-        container[TrendingLocalEntity.name] = id
+        try super.encode(to: &container)
     }
 }
 
@@ -69,6 +68,7 @@ class OwnerLocalEntity: BaseRecord, Decodable{
     
     override class var databaseTableName: String { "OwnerLocalEntity" }
     
+    var trendingId: Int
     var login: String
     var avatarUrl: String?
     
@@ -76,26 +76,30 @@ class OwnerLocalEntity: BaseRecord, Decodable{
         login: String,
         avatarUrl: String?
     ) {
+        self.trendingId = 0
         self.login = login
         self.avatarUrl = avatarUrl
         super.init()
     }
     
     required init(row: Row) throws {
+        trendingId = row[OwnerLocalEntity.trendingId]
         login = row[OwnerLocalEntity.login]
         avatarUrl = row[OwnerLocalEntity.avatarUrl]
         try super.init(row: row)
     }
     
     override func encode(to container: inout PersistenceContainer) throws {
+        container[OwnerLocalEntity.trendingId] = trendingId
         container[OwnerLocalEntity.login] = login
         container[OwnerLocalEntity.avatarUrl] = avatarUrl
     }
 }
 
 extension OwnerLocalEntity{
-    static let login = "login"
-    static let avatarUrl = "avatarUrl"
+    static let trendingId = Column("trendingId")
+    static let login = Column("login")
+    static let avatarUrl = Column("avatarUrl")
 }
 
 

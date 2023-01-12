@@ -1,28 +1,40 @@
 PODS:
+  - Alamofire (5.6.4)
   - Cuckoo (1.9.1):
     - Cuckoo/Swift (= 1.9.1)
   - Cuckoo/Swift (1.9.1)
   - GRDB.swift (6.5.0):
     - GRDB.swift/standard (= 6.5.0)
   - GRDB.swift/standard (6.5.0)
+  - Kingfisher (6.3.1)
+  - lottie-ios (4.0.1)
   - Nimble (11.2.1)
 
 DEPENDENCIES:
+  - Alamofire
   - Cuckoo
   - GRDB.swift
+  - Kingfisher (~> 6.3.1-xcode13)
+  - lottie-ios
   - Nimble
 
 SPEC REPOS:
   trunk:
+    - Alamofire
     - Cuckoo
     - GRDB.swift
+    - Kingfisher
+    - lottie-ios
     - Nimble
 
 SPEC CHECKSUMS:
+  Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
   Cuckoo: 1b6793fe60fac29af50b0a5915bc309a4a1ac673
   GRDB.swift: 390578b9b9c42ebcc03d2b94da520fb46930d6ea
+  Kingfisher: 016c8b653a35add51dd34a3aba36b580041acc74
+  lottie-ios: 54d22edf55b839f0929cabbfe609c9aa548b1145
   Nimble: 516ac503a0fafaa8e41dbb4a70a61be421fa893a
 
-PODFILE CHECKSUM: ca4a43990cfac2b096319cd7c0399a38176f28ff
+PODFILE CHECKSUM: c96065f5d3f0caa180a73dc26c2fbe204cd17201
 
 COCOAPODS: 1.11.3

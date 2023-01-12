@@ -7,27 +7,28 @@
 
 import Foundation
 
-class TrendingLocalEntityToTrendingLocalEntityMapper<M: Mapper>: Mapper where M.I == OwnerLocalEntity, M.O == Owner{
-    private let ownerMapper: M
+class TrendingLocalEntityToTrendingMapper: Mapper{
+    private let ownerMapper: any Mapper<OwnerLocalEntity, Owner>
     
-    init(ownerMapper: M) {
+    init(_ ownerMapper: any Mapper<OwnerLocalEntity, Owner>) {
         self.ownerMapper = ownerMapper
     }
     
-    func map(i: TrendingLocalEntity) -> Trending {
+    func map(_ i: TrendingLocalEntity) -> Trending {
         return Trending(
+            trendingId: i.id,
             name: i.name,
             language: i.language,
             stargazersCount: i.stargazersCount,
             description: i.description,
-            owner: ownerMapper.map(i: i.owner)
+            owner: ownerMapper.map(i.owner)
         )
     }
 }
 
 class OwnerLocalEntityToOwnerMapper: Mapper{
     
-    func map(i: OwnerLocalEntity) -> Owner {
+    func map(_ i: OwnerLocalEntity) -> Owner {
         return Owner(
             login: i.login, avatarUrl: i.avatarUrl
         )

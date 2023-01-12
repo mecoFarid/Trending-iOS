@@ -6,15 +6,19 @@
 //
 
 import Foundation
-struct Trending: Equatable{
+struct Trending: Equatable, Identifiable{
     
+    let trendingId: Int
     let name: String
     let language: String?
     let stargazersCount: Int
     let description: String?
     let owner: Owner
     
-    init(name: String, language: String?, stargazersCount: Int, description: String?, owner: Owner) {
+    var id: Int { trendingId }
+    
+    init(trendingId: Int, name: String, language: String?, stargazersCount: Int, description: String?, owner: Owner) {
+        self.trendingId = trendingId
         self.name = name
         self.language = language
         self.stargazersCount = stargazersCount

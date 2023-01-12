@@ -31,15 +31,26 @@ open class BaseRecord: Record{
     }
     
     @discardableResult
-    static func safeDeleteAll(_ db: Database, option: MultipleDeleteOptions = MultipleDeleteOptions()) -> Result<Int, DataException>{
-        return safeOrFail {
-            var deletedCount: Int = 0
-            try db.inTransaction{
-                deletedCount = try deleteAll(db)
-                return .commit
+    static func safeDeleteAll(_ dbWriter: DatabaseWriter, option: MultipleDeleteOptions = MultipleDeleteOptions()) async -> Result<Int, DataException>{
+        return await withCheckedContinuation{ continuation in
+            let result = safeOrFail{
+                var count = 0
+                try dbWriter.write{ db in
+                    count = try deleteAll(db)
+                }
+                return count
             }
-            return deletedCount
+            
+            continuation.resume(returning: result)
         }
+    }
+}
+
+actor Count{
+    var count: Int = 0
+    
+    func setCount(_ count: Int){
+        self.count = count
     }
 }
 

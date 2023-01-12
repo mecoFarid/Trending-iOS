@@ -22,7 +22,7 @@ final class TrendingRepositoryTests: XCTestCase{
         repository = TrendingRepository(mainDatasource, cacheDatasource)
     }
         
-    func test_assert_main_datasource_synced_when_cache_datasource_does_not_have_data(){
+    func test_assert_main_datasource_synced_when_cache_datasource_does_not_have_data() async{
         let query = GetTrendingQuery.getAllTrendginQuery
         let trendingList = randomNumberOf(){ randomTrending() }
         let mainSuccessful = Result<[Trending], DataException>.success(trendingList)
@@ -40,7 +40,7 @@ final class TrendingRepositoryTests: XCTestCase{
             when(mock.get(query: any())).thenReturn(mainSuccessful)
         }
         
-        let actualResult = repository.get(query: query, operation: Operation.cacheElseMain)
+        let actualResult = await repository.get(query: query, operation: Operation.cacheElseMain)
     
         verify(cacheDatasource, times(2)).get(query: query)
         verify(cacheDatasource).put(query: query, data: trendingList)
@@ -48,7 +48,7 @@ final class TrendingRepositoryTests: XCTestCase{
         expect(actualResult).to(equal(expectedResult))
     }
     
-    func test_assert_data_fetched_from_cache_datasource_when_data_exists(){
+    func test_assert_data_fetched_from_cache_datasource_when_data_exists() async{
         let query = GetTrendingQuery.getAllTrendginQuery
         let trendingList = randomNumberOf(){ randomTrending() }
         let expectedResult = Result<[Trending], DataException>.success(trendingList)
@@ -56,7 +56,7 @@ final class TrendingRepositoryTests: XCTestCase{
             when(mock.get(query: any())).thenReturn(expectedResult)
         }
         
-        let actualResult = repository.get(query: query, operation: Operation.cacheElseMain)
+        let actualResult = await repository.get(query: query, operation: Operation.cacheElseMain)
         
         verify(cacheDatasource).get(query: query)
         verify(cacheDatasource, times(0)).put(query: query, data: trendingList)
@@ -64,7 +64,7 @@ final class TrendingRepositoryTests: XCTestCase{
         expect(actualResult).to(equal(expectedResult))
     }
     
-    func test_assert_data_cached_when_main_sync_is_successful(){
+    func test_assert_data_cached_when_main_sync_is_successful() async {
         let query = GetTrendingQuery.getAllTrendginQuery
         let trendingList = randomNumberOf(){ randomTrending() }
         let mainSuccessful = Result<[Trending], DataException>.success(trendingList)
@@ -81,7 +81,7 @@ final class TrendingRepositoryTests: XCTestCase{
             when(mock).get(query: any()).thenReturn(expectedResult)
         }
         
-        let actualResult = repository.get(query: query, operation: Operation.mainElseCache)
+        let actualResult = await repository.get(query: query, operation: Operation.mainElseCache)
         
         verify(mainDatasource).get(query: query)
         verify(cacheDatasource).get(query: query)
@@ -89,7 +89,7 @@ final class TrendingRepositoryTests: XCTestCase{
         expect(actualResult).to(equal(expectedResult))
     }
     
-    func test_assert_data_cached_when_main_sync_failed(){
+    func test_assert_data_cached_when_main_sync_failed() async {
         let query = GetTrendingQuery.getAllTrendginQuery
         let trendingList = randomNumberOf(){ randomTrending() }
         let mainFailure = Result<[Trending], DataException>.failure(DataException.DataNotFoundException())
@@ -105,7 +105,7 @@ final class TrendingRepositoryTests: XCTestCase{
             when(mock).get(query: any()).thenReturn(expectedResult)
         }
         
-        let actualResult = repository.get(query: query, operation: Operation.mainElseCache)
+        let actualResult = await repository.get(query: query, operation: Operation.mainElseCache)
         
         verify(mainDatasource).get(query: query)
         verify(cacheDatasource).get(query: query)

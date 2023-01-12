@@ -9,6 +9,28 @@ import Foundation
 extension Result{
     
     @discardableResult
+    func onSuccess(closure: (Success) async -> Void) async -> Result<Success, Failure>{
+        switch self {
+        case .success(let success):
+            await closure(success)
+        case .failure(_): break
+        }
+        
+        return self
+    }
+    
+    @discardableResult
+    func onFailure(closure: (Failure) async -> Void) async -> Result<Success, Failure>{
+        switch self {
+        case .success(_): break
+        case .failure(let failure):
+            await closure(failure)
+        }
+        
+        return self
+    }
+    
+    @discardableResult
     func onSuccess(closure: (Success) -> Void) -> Result<Success, Failure>{
         switch self {
         case .success(let success):

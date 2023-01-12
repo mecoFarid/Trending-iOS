@@ -6,7 +6,7 @@
 //
 
 import Foundation
-struct TrendingRemoteEntity{
+struct TrendingRemoteEntity: Decodable{
     let id: Int
     let name: String
     let language: String?
@@ -25,12 +25,12 @@ struct TrendingRemoteEntity{
     
 }
 
-struct OwnerRemoteEntity{
-       let login: String
-       let avatar_url: String?
-       
-       init(login: String, avatar_url: String?) {
-           self.login = login
-           self.avatar_url = avatar_url
-       }
-   }
+struct OwnerRemoteEntity: Decodable{
+    let login: String
+    let avatar_url: String?
+    
+    init(login: String, avatar_url: String?) {
+        self.login = login
+        self.avatar_url = avatar_url
+    }
+}

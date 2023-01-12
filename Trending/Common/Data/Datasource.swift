@@ -10,6 +10,6 @@ import Foundation
 protocol Datasource<T, E>{
     associatedtype T
     associatedtype E: DataException
-    func get(query: Query) -> Result<T, E>
-    func put(query: Query, data: T) -> Result<T, E>
+    func get(query: Query) async -> Result<T, E>
+    func put(query: Query, data: T) async -> Result<T, E>
 }

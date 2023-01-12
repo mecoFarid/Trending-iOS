@@ -6,29 +6,34 @@
 //
 
 import Foundation
+import Alamofire
 
 class TrendingRemoteDatasource: Datasource{
-    private let service: TrendingRemoteService
+    private let session: Session
     
-    init(service: TrendingRemoteService) {
-        self.service = service
+    private let getTreandingOptions = RequestOptions(path: "search/repositories", parameters: ["q": "language=+sort:stars"])
+    
+    init(_ session: Session) {
+        self.session = session
     }
     
-    func get(query: Query) -> TrendingResult<TrendingRemoteEntity> {
+    func get(query: Query) async -> TrendingResult<TrendingRemoteEntity> {
         let query: GetTrendingQuery = query.asSpecificQuery()
-        return query.get(service: service)
+        switch query{
+        case .getAllTrendginQuery:
+            return await getAllTrendingData()
+        }
     }
     
-    func put(query: Query, data: [TrendingRemoteEntity]) -> TrendingResult<TrendingRemoteEntity> {
+    func put(query: Query, data: [TrendingRemoteEntity]) async -> TrendingResult<TrendingRemoteEntity> {
         fatalError("Put not supported")
     }
-}
-
-extension GetTrendingQuery{
-    func get(service: TrendingRemoteService) -> TrendingResult<TrendingRemoteEntity>{
-        switch self {
-        case .getAllTrendginQuery:
-            return service.get(query: self)
+    
+    private func getAllTrendingData() async -> TrendingResult<TrendingRemoteEntity> {
+        let request = BaseRouter.GET(requestOptions: getTreandingOptions)
+        let result: Result<TrendingRemoteResponse, DataException> =  await session.executeRequest(request)
+        return result.map { response in
+            response.items
         }
     }
 }
