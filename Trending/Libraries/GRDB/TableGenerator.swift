@@ -24,7 +24,11 @@ class TableGenerator{
                 try db.create(table: OwnerLocalEntity.databaseTableName, ifNotExists: true){ t in
                     t.autoIncrementedPrimaryKey(OwnerLocalEntity.id.name)
                     t.column(OwnerLocalEntity.trendingId.name, .integer)
-                    t.foreignKey([OwnerLocalEntity.trendingId.name], references: TrendingLocalEntity.databaseTableName)
+                    t.foreignKey(
+                        [OwnerLocalEntity.trendingId.name],
+                        references: TrendingLocalEntity.databaseTableName,
+                        onDelete: .cascade
+                    )
                     t.column(OwnerLocalEntity.login.name, .text).notNull()
                     t.column(OwnerLocalEntity.avatarUrl.name, .text)
                 }

@@ -25,9 +25,9 @@ class RepoModule: RepoComponent{
     
     func getTrendingInteractor() -> GetTrendingInteractor {
         
-        var mainOutMapper = ListMapper(TrendingRemoteEntityToTrendingMapper(OwnerRemoteEntityToOwnerMapper()))
-        var cacheOutMapper = ListMapper(TrendingLocalEntityToTrendingMapper(OwnerLocalEntityToOwnerMapper()))
-        var cacheInMapper = ListMapper(TrendingToTrendingLocalEntityMapper(OwnerToOwnerLocalEntityMapper()))
+        let mainOutMapper = ListMapper(TrendingRemoteEntityToTrendingMapper(OwnerRemoteEntityToOwnerMapper()))
+        let cacheOutMapper = ListMapper(TrendingLocalEntityToTrendingMapper(OwnerLocalEntityToOwnerMapper()))
+        let cacheInMapper = ListMapper(TrendingToTrendingLocalEntityMapper(OwnerToOwnerLocalEntityMapper()))
         
         let mainDatasource = DatasourceMapper(
             TrendingRemoteDatasource(networkComponent.getSesssion()),

@@ -34,6 +34,7 @@ struct RepoItem: View {
             }
             
         }
+        .contentShape(Rectangle())
         .onTapGesture {
             withAnimation{
                 isExpanded.toggle()

@@ -23,7 +23,18 @@ class RepoViewModel: ObservableObject{
         task?.cancel()
     }
     
-    func loadData(operation: Operation) {
+    func loadData(){
+        loadData(.cacheElseMain)
+    }
+    
+    func refreshData(){
+        if case .loading = uiState {
+            return
+        }
+        loadData(.mainElseCache)
+    }
+    
+    private func loadData(_ operation: Operation) {
         uiState = .loading
         cancel()
         task = Task{

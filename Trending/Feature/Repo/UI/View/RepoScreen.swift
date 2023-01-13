@@ -10,22 +10,31 @@ import SwiftUI
 struct RepoScreen: View {
     
     @EnvironmentObject var viewModel: RepoViewModel
+    var uiState: UiState { viewModel.uiState }
     
     var body: some View {
-        VStack{
-            switch viewModel.uiState {
-            case .success(let data):
-                RepoList(trendingList: data)
-            case .loading:
-                LottieView(name: LottieAnimation.loading.rawValue)
-                    .frame(width: Dimens.gu_30.rawValue, height: Dimens.gu_30.rawValue)
-            case .error:
-                LottieView(name: LottieAnimation.noData.rawValue)
-                    .frame(width: Dimens.gu_30.rawValue, height: Dimens.gu_30.rawValue)
+        ZStack(alignment: .bottomTrailing){
+            VStack(alignment: .center){
+                switch uiState {
+                case .success(let data):
+                    RepoList(trendingList: data)
+                case .loading:
+                    LottieView(name: LottieAnimation.loading.rawValue)
+                        .frame(width: Dimens.gu_30.rawValue, height: Dimens.gu_30.rawValue)
+                case .error:
+                    LottieView(name: LottieAnimation.noData.rawValue)
+                        .frame(width: Dimens.gu_30.rawValue, height: Dimens.gu_30.rawValue)
+                }
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            
+            if case .loading = uiState {} else {
+                RefreshButton(viewModel: viewModel)
             }
         }
+        .padding()
         .onAppear{
-            viewModel.loadData(operation: .cacheElseMain)
+            viewModel.loadData()
         }
         .onDisappear{
             viewModel.cancel()
@@ -45,15 +54,35 @@ struct RepoList: View {
                     Divider()
                 }
             }
+            .padding([.bottom], Dimens.gu_6.rawValue)
         }
-        .padding()
+    }
+}
+
+struct RefreshButton: View{
+    
+    let viewModel: RepoViewModel
+    
+    var body: some View{
+        Button{
+            viewModel.refreshData()
+        } label: {
+            Image(systemName: "goforward")
+                .foregroundColor(Color.white)
+                .frame(width: Dimens.gu_6.rawValue)
+                .padding(.all, Dimens.gu.rawValue)
+                .background(Color.orange)
+                .clipShape(Circle())
+        }
     }
 }
 
 struct RepoScreen_Previews: PreviewProvider {
     static let interactor = GetTrendingInteractor(
         MockTrendingRepository{
-            sleep(1_000)
+//            sleep(1_000)
+//            return Result.failure(DataException())
+            
             return Result.success([anyTrending()])
         }
     )

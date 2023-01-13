@@ -39,7 +39,7 @@ class TrendingLocalDatasource: Datasource{
         }
     }
     
-    private func getAllTrendingData() async -> TrendingResult<TrendingLocalEntity>{
+    private func getAllTrendingData() async -> TrendingResult<TrendingLocalEntity>{        
         let result: Result<[TrendingOwnerEntity], DataException> = await TrendingLocalEntity
             .including(required: TrendingLocalEntity.owner)
             .asRequest(of: TrendingOwnerEntity.self)
@@ -57,7 +57,6 @@ class TrendingLocalDatasource: Datasource{
     
     private func putAllTrendingData(_ data: [TrendingLocalEntity]) async -> TrendingResult<TrendingLocalEntity> {
         await TrendingLocalEntity.safeDeleteAll(db)
-        await OwnerLocalEntity.safeDeleteAll(db)
         let ownerList = data.compactMap{ trending in
             trending.owner
         }
