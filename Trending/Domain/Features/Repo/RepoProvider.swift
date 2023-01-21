@@ -30,13 +30,13 @@ class RepoModule: RepoComponent{
         let cacheInMapper = ListMapper(TrendingToTrendingLocalEntityMapper(OwnerToOwnerLocalEntityMapper()))
         
         let mainDatasource = DatasourceMapper(
-            TrendingRemoteDatasource(networkComponent.getSesssion()),
+            TrendingRemoteDatasource(networkComponent.getTrendingService()),
             outMapper: mainOutMapper,
             inMapper: VoidMapper()
         )
         
         let cacheDatasource = DatasourceMapper(
-            TrendingLocalDatasource(databaseComponent.getDatabase()),
+            TrendingLocalDatasource(databaseComponent.getTrendingDao()),
             outMapper: cacheOutMapper,
             inMapper: cacheInMapper
         )

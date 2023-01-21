@@ -23,8 +23,8 @@ class GRDBModule: DatabaseComponent {
         return dbWriter
     }()
     
-    func getDatabase() -> DatabaseWriter {
-        return dbWriter
+    func getTrendingDao() -> TrendingDao {
+        TrendingDao(dbWriter)
     }
     
     private func generateTables(_ dbWriter: DatabaseWriter){

@@ -7,5 +7,5 @@
 
 import Foundation
 enum GetTrendingQuery: Query {
-    case getAllTrendginQuery
+    case getAllTrendginQuery(query: String)
 }

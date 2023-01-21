@@ -11,7 +11,7 @@ import Alamofire
 class AlamofireModule: NetworkComponent{
     private lazy var session: Session = { Session.default }()
     
-    func getSesssion() -> Session {
-        return session
+    func getTrendingService() -> TrendingService {
+        return TrendingService(session)
     }
 }

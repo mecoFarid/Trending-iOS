@@ -6,8 +6,7 @@
 //
 
 import Foundation
-import GRDB
 
 protocol DatabaseComponent{
-    func getDatabase() -> DatabaseWriter
+    func getTrendingDao() -> TrendingDao
 }

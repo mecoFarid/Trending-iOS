@@ -9,5 +9,5 @@ import Foundation
 import Alamofire
 
 protocol NetworkComponent{
-    func getSesssion() -> Session
+    func getTrendingService() -> TrendingService
 }

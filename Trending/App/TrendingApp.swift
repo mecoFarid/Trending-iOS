@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-private var appComponent: AppComponent = { AppComponent() }()
+private var appComponent: AppComponent = { AppModule() }()
 
 @main
 struct TrendingApp: App {
-    
+
     var body: some Scene {
         WindowGroup{
             RepoScreen().environmentObject(RepoViewModel(appComponent.getRepoComponent().getTrendingInteractor()))

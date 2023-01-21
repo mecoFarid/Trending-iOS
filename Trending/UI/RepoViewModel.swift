@@ -39,7 +39,7 @@ class RepoViewModel: ObservableObject{
         cancel()
         task = Task{
             await getTrendingInteractor.execute(
-                query: .getAllTrendginQuery,
+                query: .getAllTrendginQuery(query: "language=+sort:stars"),
                 operation: operation
             ).onSuccess{ data in
                 uiState = .success(data)

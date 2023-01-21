@@ -1,14 +1,14 @@
 //
-//  RepoLocalDatasource.swift
+//  TrendingLocalDao.swift
 //  Trending
 //
-//  Created by Farid Mammadov on 01.12.22.
+//  Created by Farid Mammadov on 21.01.23.
 //
 
 import Foundation
 import GRDB
 
-class TrendingLocalDatasource: Datasource{
+class TrendingDao{
     
     private let db: DatabaseWriter
     
@@ -16,30 +16,24 @@ class TrendingLocalDatasource: Datasource{
         self.db = db
     }
     
-    func get(query: Query) async -> TrendingResult<TrendingLocalEntity> {
+    func get(query: GetTrendingQuery) async -> TrendingResult<TrendingLocalEntity> {
         let query: GetTrendingQuery = query.asSpecificQuery()
         var result: TrendingResult<TrendingLocalEntity>
         switch(query){
         case .getAllTrendginQuery:
             result = await getAllTrendingData()
         }
-        
-        result.onSuccess { success in
-            if success.isEmpty{
-                result = Result.failure(DataException.DataNotFoundException("Data is empty"))
-            }
-        }
         return result
     }
     
-    func put(query: Query, data: [TrendingLocalEntity]) async -> TrendingResult<TrendingLocalEntity> {
+    func put(query: GetTrendingQuery, data: [TrendingLocalEntity]) async -> TrendingResult<TrendingLocalEntity> {
         let query: GetTrendingQuery = query.asSpecificQuery()
         switch(query){
         case .getAllTrendginQuery: return await putAllTrendingData(data)
         }
     }
     
-    private func getAllTrendingData() async -> TrendingResult<TrendingLocalEntity>{        
+    private func getAllTrendingData() async -> TrendingResult<TrendingLocalEntity>{
         let result: Result<[TrendingOwnerEntity], DataException> = await TrendingLocalEntity
             .including(required: TrendingLocalEntity.owner)
             .asRequest(of: TrendingOwnerEntity.self)
