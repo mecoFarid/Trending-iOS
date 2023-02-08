@@ -8,9 +8,5 @@
 import Foundation
 class DataException: RuntimeException{
 
-    class DataNotFoundException: DataException{
-        override init(_ errorDescription: String? = nil) {
-            super.init(errorDescription)
-        }
-    }
+    class DataNotFoundException: DataException{}
 }

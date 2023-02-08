@@ -1,5 +1,5 @@
 //
-//  TrendingRepositoryTests.swift
+//  CacheRepositoryTests.swift
 //  TrendingTests
 //
 //  Created by Farid Mammadov on 14.12.22.
@@ -12,14 +12,14 @@ import Cuckoo
 import Nimble
 
 
-final class TrendingRepositoryTests: XCTestCase{
+final class CacheRepositoryTests: XCTestCase{
     
     private let cacheDatasource = MockDatasource<[Trending], DataException>()
     private let mainDatasource = MockDatasource<[Trending], DataException>()
-    private var repository: TrendingRepository!
+    private var repository: CacheRepository!
     
     override func setUp() {
-        repository = TrendingRepository(mainDatasource, cacheDatasource)
+        repository = CacheRepository(mainDatasource, cacheDatasource)
     }
         
     func test_assert_main_datasource_synced_when_cache_datasource_does_not_have_data() async{

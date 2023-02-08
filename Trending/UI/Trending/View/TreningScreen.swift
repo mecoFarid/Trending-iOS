@@ -1,5 +1,5 @@
 //
-//  RepoView.swift
+//  TreningScreen.swift
 //  Trending
 //
 //  Created by Farid Mammadov on 05.01.23.
@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct RepoScreen: View {
+struct TreningScreen: View {
     
-    @EnvironmentObject var viewModel: RepoViewModel
+    @EnvironmentObject var viewModel: TrendingViewModel
     var uiState: UiState { viewModel.uiState }
     
     var body: some View {
@@ -17,7 +17,7 @@ struct RepoScreen: View {
             VStack(alignment: .center){
                 switch uiState {
                 case .success(let data):
-                    RepoList(trendingList: data)
+                    TrendingList(trendingList: data)
                 case .loading:
                     LottieView(name: LottieAnimation.loading.rawValue)
                         .frame(width: Dimens.gu_30.rawValue, height: Dimens.gu_30.rawValue)
@@ -42,7 +42,7 @@ struct RepoScreen: View {
     }
 }
 
-struct RepoList: View {
+struct TrendingList: View {
     
     let trendingList: [Trending]
     
@@ -50,7 +50,7 @@ struct RepoList: View {
         ScrollView{
             LazyVStack{
                 ForEach(trendingList) { trending in
-                    RepoItem(trending: trending)
+                    TrendingItem(trending: trending)
                     Divider()
                 }
             }
@@ -61,7 +61,7 @@ struct RepoList: View {
 
 struct RefreshButton: View{
     
-    let viewModel: RepoViewModel
+    let viewModel: TrendingViewModel
     
     var body: some View{
         Button{
@@ -77,16 +77,13 @@ struct RefreshButton: View{
     }
 }
 
-struct RepoScreen_Previews: PreviewProvider {
+struct TrendingScreen_Previews: PreviewProvider {
     static let interactor = GetTrendingInteractor(
-        MockTrendingRepository{
-//            sleep(1_000)
-//            return Result.failure(DataException())
-            
+        MockRepository{
             return Result.success([anyTrending()])
         }
     )
     static var previews: some View {
-        RepoScreen().environmentObject(RepoViewModel(interactor))
+        TreningScreen().environmentObject(TrendingViewModel(interactor))
     }
 }

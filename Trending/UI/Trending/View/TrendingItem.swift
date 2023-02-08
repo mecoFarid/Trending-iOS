@@ -1,5 +1,5 @@
 //
-//  RepoItem.swift
+//  TrendingItem.swift
 //  Trending
 //
 //  Created by Farid Mammadov on 07.01.23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct RepoItem: View {
+struct TrendingItem: View {
     
     let trending: Trending
     @State private var isExpanded: Bool = false
@@ -43,8 +43,8 @@ struct RepoItem: View {
     }
 }
 
-struct RepoItem_Previews: PreviewProvider {
+struct TrendingItem_Previews: PreviewProvider {
     static var previews: some View {
-        RepoItem(trending: anyTrending())
+        TrendingItem(trending: anyTrending())
     }
 }

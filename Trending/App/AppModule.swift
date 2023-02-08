@@ -16,7 +16,7 @@ class AppModule: AppComponent{
         GRDBModule()
     }()
     
-    func getRepoComponent() -> RepoComponent{
-        RepoModule(dbComponent, networkComponent)
+    func getTrendingComponent() -> TrendingComponent{
+        TrendingModule(dbComponent, networkComponent)
     }
 }

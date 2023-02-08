@@ -14,7 +14,7 @@ struct TrendingApp: App {
 
     var body: some Scene {
         WindowGroup{
-            RepoScreen().environmentObject(RepoViewModel(appComponent.getRepoComponent().getTrendingInteractor()))
+            TreningScreen().environmentObject(TrendingViewModel(appComponent.getTrendingComponent().getTrendingInteractor()))
         }
     }
 }

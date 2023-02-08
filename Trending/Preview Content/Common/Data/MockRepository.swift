@@ -1,5 +1,5 @@
 //
-//  MockTrendingRepository.swift
+//  MockRepository.swift
 //  Trending
 //
 //  Created by Farid Mammadov on 09.01.23.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class MockTrendingRepository<T, E: DataException>: Repository{
+class MockRepository<T, E: DataException>: Repository{
     
     private var result: () async -> Result<T, E>
     

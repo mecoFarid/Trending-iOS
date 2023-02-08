@@ -64,3 +64,17 @@ extension Result{
         return isSuccessul
     }
 }
+
+extension Result where Failure: Error{
+    
+    init(catchingSpecific: () async throws -> Success) async{
+        do{
+            self = Result.success(try await catchingSpecific())
+        }catch let error as Failure{
+            self = Result.failure(error)
+        }catch let error {
+            fatalError("Expected to throw \(Failure.self) but \(error) was thrown")
+        }
+    }
+    
+}

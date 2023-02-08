@@ -1,5 +1,5 @@
 //
-//  RepoViewModel.swift
+//  TrendingViewModel.swift
 //  Trending
 //
 //  Created by Farid Mammadov on 05.01.23.
@@ -8,7 +8,7 @@
 import Foundation
 
 @MainActor
-class RepoViewModel: ObservableObject{
+class TrendingViewModel: ObservableObject{
     
     @Published private(set) var uiState: UiState = .loading
     private var task: Task<TrendingResult<Trending>, Never>?

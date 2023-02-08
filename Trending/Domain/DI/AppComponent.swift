@@ -8,5 +8,5 @@
 import Foundation
 
 protocol AppComponent{
-    func getRepoComponent() -> RepoComponent
+    func getTrendingComponent() -> TrendingComponent
 }

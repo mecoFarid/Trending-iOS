@@ -8,8 +8,9 @@
 import Foundation
 import Alamofire
 
+private let baseUrl: URL = URL(string: "https://api.github.com")!
+
 struct BaseRouter: URLRequestConvertible{
-    private let baseUrl: URL = URL(string: "https://api.github.com")!
     
     private let method: HTTPMethod
     private let requestOptions: RequestOptions

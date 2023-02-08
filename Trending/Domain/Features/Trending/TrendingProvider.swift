@@ -1,5 +1,5 @@
 //
-//  RepoProvider.swift
+//  TrendingProvider.swift
 //  Trending
 //
 //  Created by Farid Mammadov on 09.01.23.
@@ -9,11 +9,11 @@ import Foundation
 import GRDB
 import Alamofire
 
-protocol RepoComponent{
+protocol TrendingComponent{
     func getTrendingInteractor() -> GetTrendingInteractor
 }
 
-class RepoModule: RepoComponent{
+class TrendingModule: TrendingComponent{
     
     private let databaseComponent: DatabaseComponent
     private let networkComponent: NetworkComponent
@@ -30,7 +30,10 @@ class RepoModule: RepoComponent{
         let cacheInMapper = ListMapper(TrendingToTrendingLocalEntityMapper(OwnerToOwnerLocalEntityMapper()))
         
         let mainDatasource = DatasourceMapper(
-            TrendingRemoteDatasource(networkComponent.getTrendingService()),
+            NetworkDatasource(
+                service: networkComponent.getTrendingService(),
+                exceptionMapper: NetworkExceptionMapper()
+            ),
             outMapper: mainOutMapper,
             inMapper: VoidMapper()
         )
@@ -41,7 +44,13 @@ class RepoModule: RepoComponent{
             inMapper: cacheInMapper
         )
         
-        let repository = TrendingRepository(mainDataSource: mainDatasource, cacheDataSource: cacheDatasource)
+        let repository = CacheRepository(mainDataSource: mainDatasource, cacheDataSource: cacheDatasource)
         return GetTrendingInteractor(repository)
+    }
+}
+
+class NetworkExceptionMapper: Mapper{
+    func map(_ i: NetworkException) -> DataException {
+        return DataException.DataNotFoundException()
     }
 }
